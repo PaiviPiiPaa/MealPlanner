@@ -329,7 +329,7 @@ function renderRecipe(info) {
 function populateMealChoices(info) {
   mealChoice.innerHTML = `
     <option value="">Valitse ehdotus</option>
-    ${info.meals.map(meal => `<option value="${meal.name}">${meal.name}</option>`).join('')}
+    ${info.meals.map(meal => `<option value="${meal.name}">${meal.name} (${meal.protein})</option>`).join('')}
   `;
 }
 
