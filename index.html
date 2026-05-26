@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meal Planner</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <h1>Meal Planner - Proteiinisuunnitelma</h1>
+
+    <div class="top-grid">
+      <section class="card">
+        <h2>1. Laske proteiinitarve</h2>
+        <label>Paino (kg)
+          <input id="weight" type="number" min="30" max="200" value="70" />
+        </label>
+        <label>Harjoittelutaso</label>
+        <select id="training-type">
+          <option value="1.2">Kevyt liikunta</option>
+          <option value="1.4">Aerobinen harjoittelu</option>
+          <option value="1.8">Säännöllinen voimaharjoittelu</option>
+          <option value="2.0">Tiheä lihaskasvu</option>
+        </select>
+        <button id="calculate">Laske proteiini</button>
+        <p id="protein-result">Täytä tiedot ja paina laske.</p>
+      </section>
+
+      <section class="card">
+        <h2>2. Valitse proteiinilähde</h2>
+        <select id="protein-source">
+          <option value="broileri">Broileri</option>
+          <option value="lohi">Lohi</option>
+          <option value="nauta">Naudanliha</option>
+          <option value="tofu">Tofu / tempeh</option>
+          <option value="pavut">Pavut / linssit</option>
+          <option value="kananmunat">Kananmunat</option>
+          <option value="maitotuotteet">Maitotuotteet</option>
+          <option value="seitan">Seitan / vegaani</option>
+        </select>
+        <button id="generate">Ehdota ateriat</button>
+      </section>
+    </div>
+
+    <section class="card" id="dish-card" hidden>
+      <h2>3. Valitse ruokalaji</h2>
+      <select id="meal-choice">
+        <option value="">Valitse ehdotus</option>
+      </select>
+      <button id="choose-meal">Näytä valittu ruokalaji</button>
+      <p id="meal-selection-hint">Valitse ensin ehdotus listasta.</p>
+    </section>
+
+    <section class="card" id="results" hidden>
+      <h2>4. Valittu ateria</h2>
+      <div id="meal-options"></div>
+      <div id="shopping-list"></div>
+      <div id="recipe"></div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
